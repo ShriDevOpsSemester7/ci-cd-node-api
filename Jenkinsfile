@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Checkout') { 
             steps { 
-                git 'https://github.com/ShriDevOpsSemester7/ci-cd-node-api.git'
+                git branch: 'main', url: 'https://github.com/ShriDevOpsSemester7/ci-cd-node-api.git'
             } 
         }
         stage('Build') { steps { sh 'npm install' } }
