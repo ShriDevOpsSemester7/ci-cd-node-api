@@ -3,7 +3,11 @@ pipeline {
     environment { IMAGE_NAME = "my-node-api" }
 
     stages {
-        stage('Checkout') { steps { 'git https://github.com/ShriDevOpsSemester7/ci-cd-node-api.git' } }
+        stage('Checkout') { 
+            steps { 
+                git 'https://github.com/ShriDevOpsSemester7/ci-cd-node-api.git'
+            } 
+        }
         stage('Build') { steps { sh 'npm install' } }
         stage('Test') { steps { sh 'echo "No tests yet!"' } }
         stage('Docker Build & Run') {
